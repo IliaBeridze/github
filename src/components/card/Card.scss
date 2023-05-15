@@ -1,0 +1,28 @@
+.card {
+  padding: 48px;
+border-radius: 15px;
+  display: flex;
+}
+
+.profile-picture {
+  width: 117px;
+  height: 117px;
+  border-radius: 50%;
+  margin-right: 37px;
+}
+.name {
+  margin-right: 200px;
+}
+.infocard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 480px;
+}
+
+.active-card {
+  width: 480px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 32px;
+}
