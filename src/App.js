@@ -1,6 +1,7 @@
 import Card from "./components/card/Card";
 import moon from "./components/icon/Path.png";
 import sun from "./components/icon/002-sun.png";
+import SearchIcon from "./components/icon/search.png";
 import Search from "./components/search/Search";
 import "./App.css";
 import { useEffect, useState } from "react";
@@ -43,13 +44,22 @@ function App() {
           <img onClick={() => setDark(!dark)} src={moon} alt="icon" />
         )}
       </div>
+
       <Search
+        SearchIcon={SearchIcon}
         getValue={getValue}
         getInfo={getInfo}
         dark={dark}
         message={user.message ? "No results" : ""}
       />
       <Card
+      location={user.location}
+      company={user.company}
+      twitter_username={user.twitter_username}
+      blog={user.blog}
+
+
+
         dark={dark}
         img={user.avatar_url}
         name={user.name}

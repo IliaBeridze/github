@@ -8,3 +8,28 @@ justify-content: space-around;
  background-color: bisque
 
 }
+
+.search-btn {
+ font-family: Space Mono , sans-serif;
+font-size: 16px;
+font-weight: 700;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: left;
+color: #fff;
+background: #0079FF;
+border: none;
+border-radius: 10px;
+padding: 12px 24px;
+cursor: pointer;
+}
+
+.search-input {
+  font-family: Space Mono , sans-serif;
+font-size: 18px;
+font-weight: 400;
+line-height: 25px;
+letter-spacing: 0px;
+text-align: left;
+all: unset;
+}
