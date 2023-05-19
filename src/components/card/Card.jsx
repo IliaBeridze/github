@@ -37,10 +37,10 @@ export default function Card({
           <Active text={"Following"} quantity={following} dark={dark} />
         </div>
         <div className="footer">
-          <footer text={location} />
-          <footer text={twitter_username} />
-          <footer text={blog} />
-          <footer text={company} />
+          <Footer text={location} />
+          <Footer text={twitter_username} />
+          <Footer text={blog} />
+          <Footer text={company} />
         </div>
       </div>
     </div>

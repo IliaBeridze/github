@@ -10,9 +10,10 @@ function App() {
   const [dark, setDark] = useState(false);
   const [user, setUser] = useState([]);
   const [value, setValue] = useState("octocat");
+  const [message, setMessage] = useState(false)
 
   useEffect(() => {
-    getInfo();
+    getInfo()
   }, []);
 
   function getValue(e) {
@@ -21,9 +22,18 @@ function App() {
   console.log(user);
   console.log(user.message);
   function getInfo() {
-    fetch(`https://api.github.com/users/${user.message ? "octocat" : value}`)
+    fetch(`https://api.github.com/users/${value}`)
       .then((response) => response.json())
       .then((data) => {
+        // console.log(data);
+        if(data.message === "Not Found" ){
+          setMessage(!message)
+          return fetch("https://api.github.com/users/octocat")
+          .then((response) => response.json())
+          .then((data) => {
+            setUser(data);
+          });
+        }
         setUser(data);
       });
   }
@@ -50,16 +60,13 @@ function App() {
         getValue={getValue}
         getInfo={getInfo}
         dark={dark}
-        message={user.message ? "No results" : ""}
+        message={message ? "No results" : ""}
       />
       <Card
-      location={user.location}
-      company={user.company}
-      twitter_username={user.twitter_username}
-      blog={user.blog}
-
-
-
+        location={user.location}
+        company={user.company}
+        twitter_username={user.twitter_username}
+        blog={user.blog}
         dark={dark}
         img={user.avatar_url}
         name={user.name}
