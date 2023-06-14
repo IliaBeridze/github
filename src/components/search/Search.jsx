@@ -2,13 +2,8 @@ import "./Search.scss";
 import search from "../../components/icon/search.png";
 import React from "react";
 
-export default function Search({
-  getValue,
-  getInfo,
-  dark,
-  message,
-  searchIcon,
-}) {
+export default function Search({ getValue, getInfo, dark, message }) {
+  let checkResult = message ? "no-result" : "";
   return (
     <div
       className="search"
@@ -16,7 +11,7 @@ export default function Search({
     >
       <img src={search} alt="search" />
       <input
-        className="search-input"
+        className={`search-input ${checkResult}`}
         type="text"
         placeholder="Search GitHub username…"
         onChange={getValue}

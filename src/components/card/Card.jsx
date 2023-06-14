@@ -1,8 +1,6 @@
 import "./Card.scss";
 import Active from "../active/Active";
-import Footer from "../footer/Footer";
-// import location from "./components/icon/locacion-light.pnj"
-import React from "react";
+// import React, { useState } from "react";
 
 export default function Card({
   img,
@@ -11,19 +9,18 @@ export default function Card({
   repos,
   followers,
   following,
-  blog,
-  location,
-  company,
-  twitter_username,
+  joined,
 }) {
+
+
   return (
     <div style={{ background: dark ? "#1E2A47" : "#FEFEFE" }} className="card">
       <div>
-        <img className="profile-picture" src={img} alt="profilePicture" />
+        <img  className="profile-picture" src={img} alt="profilePicture" />
       </div>
       <div className="infocard">
-        <p className="name">{name}</p>
-        <p>joined {twitter_username}</p>
+        <p className="name"> name: {name}</p>
+        {/* <p>joined: {joined.slice(0,10)}</p> */}
         <p className="text">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
           Quisque volutpat mattis eros.
@@ -36,7 +33,6 @@ export default function Card({
           <Active text={"Followers"} quantity={followers} dark={dark} />
           <Active text={"Following"} quantity={following} dark={dark} />
         </div>
-        
       </div>
     </div>
   );
