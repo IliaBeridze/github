@@ -13,21 +13,22 @@ function App() {
   const [message, setMessage] = useState(false);
 
   useEffect(() => {
-    getInfo();
+    getInfo(); 
   }, []);
 
   function getValue(e) {
     setValue(e.target.value);
   }
-  console.log(user);
+  // console.log(user);
   // console.log(user.message);
   function getInfo() {
     fetch(`https://api.github.com/users/${value}`)
       .then((response) => response.json())
       .then((data) => {
+        setMessage(false)
         // console.log(data);
         if (data.message === "Not Found") {
-          setMessage(!message);
+          setMessage(true);
           return fetch("https://api.github.com/users/octocat")
             .then((response) => response.json())
             .then((data) => {
@@ -37,6 +38,7 @@ function App() {
         setUser(data);
       });
   }
+  
 
   return (
     <div
@@ -60,7 +62,8 @@ function App() {
         getValue={getValue}
         getInfo={getInfo}
         dark={dark}
-        message={message? "No results" : ""}
+        message={message}
+        
       />
       <Card
         dark={dark}

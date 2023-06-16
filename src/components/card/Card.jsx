@@ -20,7 +20,7 @@ export default function Card({
       </div>
       <div className="infocard">
         <p className="name"> name: {name}</p>
-        {/* <p>joined: {joined.slice(0,10)}</p> */}
+        <p>joined: {joined ? joined.slice(0,10):""}</p>
         <p className="text">
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
           Quisque volutpat mattis eros.

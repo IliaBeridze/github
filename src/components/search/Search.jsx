@@ -1,9 +1,11 @@
 import "./Search.scss";
 import search from "../../components/icon/search.png";
-import React from "react";
 
-export default function Search({ getValue, getInfo, dark, message }) {
-  let checkResult = message ? "no-result" : "";
+
+export default function Search({ getValue, getInfo, dark, message}) {
+
+  let checkResult = message? "no-result" : "";
+
   return (
     <div
       className="search"
@@ -16,7 +18,7 @@ export default function Search({ getValue, getInfo, dark, message }) {
         placeholder="Search GitHub username…"
         onChange={getValue}
       />
-      <p>{message}</p>
+      <p>{message ? "no-result":" "}</p>
       <button className="search-btn" onClick={getInfo}>
         Search
       </button>
